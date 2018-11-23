@@ -16,8 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewActivity"></activity>
-        <activity android:name=".view.ScreenSlidePagerActivity"></activity>
+        <activity android:name=".ViewActivity" />
+        <activity android:name=".view.ScreenSlidePagerActivity" />
+        <activity android:name=".view.backgroud.BackgroupActivity"></activity>
     </application>
 
 </manifest>

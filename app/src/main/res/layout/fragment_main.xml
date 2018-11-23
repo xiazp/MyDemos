@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainFragment"
+    android:orientation="vertical"
+    android:id="@+id/fgMain">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+
+    <Button
+        android:id="@+id/btScreenSlide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button1"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btBackgroud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button2"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:onClick="onClick"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcvItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
