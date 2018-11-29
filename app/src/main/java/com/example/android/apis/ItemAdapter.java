@@ -1,5 +1,7 @@
 package com.example.android.apis;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -25,20 +27,33 @@ import java.util.List;
  * ===========================================================================================
  */
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
+    private List<Item> mItems;
+    Activity mActivity;
 
-    private int mInt;
+    public ItemAdapter(Activity activity, List<Item> items) {
+        mItems = items;
+        mActivity = activity;
+    }
 
-    public static class  ViewHolder extends RecyclerView.ViewHolder{
+    public class  ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final TextView textView;
+        private int position;
 
         public ViewHolder(View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.textView);
-
+            itemView.setOnClickListener(this);
         }
 
-        public TextView getTextView(){
-            return textView;
+        @Override
+        public void onClick(View v) {
+            Intent intent = mItems.get(position).getIntent();
+            mActivity.startActivity(intent);
+        }
+
+        public void onBindData(int position){
+            this.position = position;
+            textView.setText(mItems.get(position).getName());
         }
     }
 
@@ -54,11 +69,17 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textView.setText(String.valueOf(position));
+        holder.onBindData(position);
     }
 
     @Override
     public int getItemCount() {
-        return 2;
+        return mItems.size();
     }
+
+
+
+
+
+
 }
