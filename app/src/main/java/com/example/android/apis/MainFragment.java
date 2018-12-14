@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.android.apis.view.DialogActivity;
 import com.example.android.apis.view.ScreenSlidePagerActivity;
 import com.example.android.apis.view.backgroud.BackgroupActivity;
 
@@ -84,5 +85,6 @@ public class MainFragment extends Fragment implements MainContract.View, View.On
     public void initItems(){
         addItem("backgroud", BackgroupActivity.class);
         addItem("slidePage", ScreenSlidePagerActivity.class);
+        addItem("Dialog",    DialogActivity.class);
     }
 }
